@@ -10,7 +10,7 @@ antigen bundle vi-mode
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle nvm
 antigen bundle unixorn/autoupdate-antigen.zshplugin
-antigen bundle powerline/powerline --loc=powerline/bindings/zsh/powerline.zsh
+#antigen bundle powerline/powerline --loc=powerline/bindings/zsh/powerline.zsh
 
 antigen apply
 
