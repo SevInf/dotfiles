@@ -1,0 +1,19 @@
+[user]
+	name = Sergey Tatarintsev
+	email = tatarincev.serg@yandex.ua
+[push]
+	default = simple
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore_global
+	preloadindex = true
+[merge]
+	tool = vimdiff
+[branch]
+	autosetuprebase = always
+[alias]
+    fpush = !sh -c 'git push -u origin \"+$(git symbolic-ref --short HEAD)\"'
+    amend = commit -a --amend --no-edit
+[rebase]
+	autosquash = true

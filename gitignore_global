@@ -1,0 +1,14 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+.tern-project
+.tern-port
