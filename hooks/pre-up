@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
+pushd ~/.dotfiles
 git submodule update --init
+popd
