@@ -17,3 +17,5 @@
     amend = commit -a --amend --no-edit
 [rebase]
 	autosquash = true
+[include]
+    path = .gitconfig.local
