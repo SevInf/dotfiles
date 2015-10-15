@@ -16,22 +16,21 @@ antigen apply
 
 export EDITOR='vim'
 
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:*' formats '[%s:%F{64}%b%F{244}@%F{136}%12.12i%F{124}%c%u%F{244}]'
-zstyle ':vcs_info:*' actionformats '[%s:%F{64}%b%F{244}@%F{124}%a:%c%u%F{244}]'
-zstyle ':vcs_info:*' get-revision true
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:*' unstagedstr '?'
+if [[ -r ~/.zsrc.local ]]; then
+    source ~/.zshrc.local
+fi
 
-precmd() {
-    vcs_info
-}
 
-PROMPT='%B%{%F{33}%}%n:%c$%b%F{244}$(vi_mode_prompt_info) '
-RPROMPT='%B${vcs_info_msg_0_}%{$reset_color%}'
-MODE_INDICATOR='[n]'
+#if [[ $HOST -ne $DEFAULT_HOSTNAME || $USERNAME -ne $DEFAULT_USERNAME ]]; then
+local user_host="%{$fg[blue]%}%n@%{$fg[green]%}%M"
+#fi
+
+autoload -U colors
+PROMPT="${user_host}%{$fg_bold[blue]%}[%~]%{$reset_color%}$ "
+
+#PROMPT='%B%{%F{33}%}%n:%c$%b%F{244}$(vi_mode_prompt_info) '
+#RPROMPT='%B${vcs_info_msg_0_}%{$reset_color%}'
+#MODE_INDICATOR='[n]'
 
 
 # Bind history-substring-search
@@ -51,4 +50,3 @@ alias gnvim='open -a Neovim'
 
 ulimit -n 8000
  
-source ~/.zshrc.local
