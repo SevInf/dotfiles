@@ -23,7 +23,7 @@ if [[ -n $SSH_CLIENT ]]; then
     local host="%{$fg[blue]%}%n@%M%{$reset_color%}:"
 fi
 
-local dir="%{$fg[white]%}%~%{$reset_color%}"
+local dir="%{$fg_bold[white]%}%~%{$reset_color%}"
 local last_status="%(?. .%{$fg[red]%}✘)%{$reset_color%}"
 local top_prompt="${host}${dir}"
 
@@ -31,11 +31,11 @@ function zle-line-init zle-keymap-select {
     local vimode=''
     local bar_color
     if [[ $KEYMAP == 'vicmd' ]]; then
-        vimode="%{$fg_bold[white]%}NORMAL %{$reset_color%}%"
+        vimode="%{$fg[black]%}NORMAL %{$reset_color%}%"
         bar_color='blue'
         echo -n '\x1b]50;CursorShape=0\x7'
     else
-        vimode="%{$fg_bold[white]%}INSERT %{$reset_color%}%"
+        vimode="%{$fg[black]%}INSERT %{$reset_color%}%"
         bar_color='green'
         echo -n '\x1b]50;CursorShape=1\x7'
     fi
