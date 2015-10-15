@@ -6,7 +6,6 @@ antigen bundle git
 antigen bundle github
 antigen bundle brew
 antigen bundle z
-antigen bundle vi-mode
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle nvm
 antigen bundle unixorn/autoupdate-antigen.zshplugin
@@ -14,11 +13,12 @@ antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen apply
 
 export EDITOR='vim'
+bindkey -v
+export KEYTIMEOUT=1
 
 autoload -U colors
 
 # Prompt
-
 if [[ -n $SSH_CLIENT ]]; then
     local host="%{$fg[blue]%}%n@%M%{$reset_color%}:"
 fi
