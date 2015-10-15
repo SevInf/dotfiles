@@ -12,11 +12,17 @@ antigen bundle unixorn/autoupdate-antigen.zshplugin
 
 antigen apply
 
+async_init
+
 export EDITOR='vim'
 bindkey -v
 export KEYTIMEOUT=1
 
 autoload -U colors
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' enable git 
+zstyle ':vcs_info:git*' formats " %b"
 
 # Prompt
 if [[ -n $SSH_CLIENT ]]; then
@@ -48,6 +54,11 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+precmd() {
+    vcs_info
+    RPROMPT='${vcs_info_msg_0_}'
+}
 
 # Bind history-substring-search
 bindkey '^[[A' history-substring-search-up
