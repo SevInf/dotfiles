@@ -3,7 +3,6 @@ source ~/.dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle git
-antigen bundle github
 antigen bundle brew
 antigen bundle z
 antigen bundle zsh-users/zsh-history-substring-search
@@ -11,8 +10,6 @@ antigen bundle nvm
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 
 antigen apply
-
-async_init
 
 export EDITOR='vim'
 bindkey -v
