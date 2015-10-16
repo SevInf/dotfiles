@@ -72,6 +72,10 @@ alias optimize='git diff --name-only --staged --diff-filter AM -z -- "*.png" | x
 alias gnvim='open -a Neovim'
 
 ulimit -n 8000
+
+if brew command command-not-found-init > /dev/null; then
+    eval "$(brew command-not-found-init)"
+fi
  
 if [[ -r ~/.zshrc.local ]]; then
     source ~/.zshrc.local
