@@ -47,6 +47,7 @@ function zle-line-init zle-keymap-select {
 
     PROMPT=$'${top_prompt}\n${bottom_prompt} '
     zle reset-prompt
+    zle -R
 }
 
 zle -N zle-line-init
