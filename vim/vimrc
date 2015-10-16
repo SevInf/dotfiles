@@ -41,6 +41,7 @@ Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'reedes/vim-pencil'
+Plug 'jszakmeister/vim-togglecursor'
 
 " Neovim-specific plugins
 if has('nvim')
