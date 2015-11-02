@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 
 vim +PlugInstall +qall
-ln -s ~/.vim ~/.nvim
+mkdir -p ~/.config
+ln -s ~/.vim ~/.config/nvim
