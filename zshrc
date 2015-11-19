@@ -30,17 +30,25 @@ local dir="%{$fg_bold[white]%}%~%{$reset_color%}"
 local last_status="%(?. .%{$fg[red]%}✘)%{$reset_color%}"
 local top_prompt="${host}${dir}"
 
+function cursor-shape {
+    local seq="\033]50;CursorShape=$1\007"
+    if [[ -n $TMUX ]] then
+        seq="\033Ptmux;\033$seq\033\\"
+    fi
+    echo -n $seq
+}
+
 function zle-line-init zle-keymap-select {
     local vimode=''
     local bar_color
     if [[ $KEYMAP == 'vicmd' ]]; then
         vimode="%{$fg[black]%}NORMAL %{$reset_color%}%"
         bar_color='blue'
-        echo -n '\x1b]50;CursorShape=0\x7'
+        cursor-shape 0
     else
         vimode="%{$fg[black]%}INSERT %{$reset_color%}%"
         bar_color='green'
-        echo -n '\x1b]50;CursorShape=1\x7'
+        cursor-shape 1
     fi
 
     local bottom_prompt="%{$bg[$bar_color]%}${last_status}%{$bg[$bar_color]%} ${vimode} %{$fg[$bar_color]%}%{$reset_color%}"
