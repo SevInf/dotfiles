@@ -3,3 +3,4 @@
 vim +PlugInstall +qall
 mkdir -p ~/.config
 ln -s ~/.vim ~/.config/nvim
+~/.tmux/plugins/tpm/bin/install_plugins
