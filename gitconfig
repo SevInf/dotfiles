@@ -16,6 +16,7 @@
     fpush = !sh -c 'git push -u origin \"+$(git symbolic-ref --short HEAD)\"'
     amend = commit -a --amend --no-edit
     log-mine = !sh -c 'git log --author \"$(git config --get user.name)\"'
+    file-stat = ! "f() { git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD |grep  '^author '|sort|uniq -c|sort -nr ; }; f"
 [rebase]
 	autosquash = true
 [include]
