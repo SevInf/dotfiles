@@ -91,6 +91,12 @@ colorscheme base16-solarized-dark
 set mouse=a
 
 
+function UseLocalEslint()
+    if executable('./node_modules/.bin/eslint')
+        let b:syntastic_javascript_eslint_exe = './node_modules/.bin/eslint'
+    endif
+endfunction
+
 " define a group for autocommands
 augroup vimrc
     autocmd!
@@ -118,6 +124,9 @@ augroup vimrc
 
     " Auto hard wrap markdown to 80 chars
     autocmd FileType markdown call pencil#init({'wrap': 'hard'})
+
+    " Use local eslint
+    autocmd FileType javascript call UseLocalEslint()
 augroup END
 
 " Key maps
@@ -193,7 +202,7 @@ let g:airline_symbols.linenr = ''
 
 " syntastic
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " no-conceal cursor for indent line
 let g:indentLine_noConcealCursor=""
