@@ -83,6 +83,10 @@ set laststatus=2
 set guioptions+=rlTm
 set guioptions-=rlTm
 
+" better search
+set hlsearch
+set incsearch
+
 "color scheme
 set t_Co=256
 colorscheme base16-solarized-dark
