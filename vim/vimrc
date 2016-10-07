@@ -148,6 +148,7 @@ noremap <C-l> <esc>:tabnext<cr>
 nnoremap H ^
 nnoremap L $
 nnoremap Q <nop>
+nnoremap <esc> :noh<return><esc>
 
 " Hard mode
 nnoremap <up> <nop>
