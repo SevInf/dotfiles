@@ -238,5 +238,5 @@ if has('nvim')
 
     let test#strategy = "neoterm"
     let g:neoterm_position = 'vertical'
-    set incommand=split
+    set inccommand=split
 endif
