@@ -166,7 +166,7 @@ iabbrev filed field
 iabbrev Filed Field
 
 " case-insensitive :w
-command! W normal :wq
+command! W normal :w
 
 " indentLine
 let g:indentLine_color_gui = '#585858'
@@ -238,4 +238,5 @@ if has('nvim')
 
     let test#strategy = "neoterm"
     let g:neoterm_position = 'vertical'
+    set incommand=split
 endif
