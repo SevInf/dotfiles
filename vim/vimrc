@@ -37,13 +37,19 @@ Plug 'wting/rust.vim'
 Plug 'janko-m/vim-test'
 Plug 'mxw/vim-jsx'
 Plug 'Shougo/vimproc', { 'do': 'make' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'reedes/vim-pencil'
 Plug 'jszakmeister/vim-togglecursor'
 
-" Neovim-specific plugins
 if has('nvim')
+    " Neovim-specific plugins
     Plug 'kassio/neoterm'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+    Plug 'Shougo/echodoc.vim'
+    Plug 'Shougo/neopairs.vim'
+else
+    " Vim-specific plugins
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 endif
 
 call plug#end()
@@ -237,6 +243,19 @@ if has('nvim')
     augroup END
 
     let test#strategy = "neoterm"
+
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_camel_case = 1
+
     let g:neoterm_position = 'vertical'
+
+    " Allow to pick completion with arrow keys
+    inoremap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
+    inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
+
+    let g:neopairs#enable = 1
+    
+    let g:echodoc_enable_at_startup = 1
+
     set inccommand=split
 endif
