@@ -74,17 +74,10 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 # Aliases
 alias mvim='mvim --remote-tab-silent'
-alias bem='PATH="$(npm bin):$PATH" bem'
 alias serve='python -m SimpleHTTPServer'
-alias optimize='git diff --name-only --staged --diff-filter AM -z -- "*.png" | xargs -0 open -a ImageOptim'
-alias gnvim='open -a Neovim'
 
 ulimit -n 8000
 
-if brew command command-not-found-init > /dev/null; then
-    eval "$(brew command-not-found-init)"
-fi
- 
 if [[ -r ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
