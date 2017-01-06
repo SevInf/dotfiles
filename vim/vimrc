@@ -39,6 +39,7 @@ Plug 'mxw/vim-jsx'
 Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'reedes/vim-pencil'
 Plug 'jszakmeister/vim-togglecursor'
+Plug 'embear/vim-localvimrc'
 
 if has('nvim')
     " Neovim-specific plugins
@@ -98,13 +99,6 @@ colorscheme base16-solarized-dark
 "enable mouse
 set mouse=a
 
-
-function! UseLocalEslint()
-    if executable('./node_modules/.bin/eslint')
-        let b:syntastic_javascript_eslint_exe = './node_modules/.bin/eslint'
-    endif
-endfunction
-
 " define a group for autocommands
 augroup vimrc
     autocmd!
@@ -133,8 +127,6 @@ augroup vimrc
     " Auto hard wrap markdown to 80 chars
     autocmd FileType markdown call pencil#init({'wrap': 'hard'})
 
-    " Use local eslint
-    autocmd FileType javascript call UseLocalEslint()
 augroup END
 
 " Key maps
