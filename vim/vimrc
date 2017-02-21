@@ -251,3 +251,7 @@ if has('nvim')
 
     set inccommand=split
 endif
+
+if filereadable('~/.vim/vimrc.local')
+    source '~/.vim/vimrc.local'
+endif
