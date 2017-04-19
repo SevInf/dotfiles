@@ -41,6 +41,7 @@ Plug 'reedes/vim-pencil'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'embear/vim-localvimrc'
 Plug 'reedes/vim-colors-pencil'
+Plug 'StanAngeloff/php.vim'
 
 if has('nvim')
     " Neovim-specific plugins
