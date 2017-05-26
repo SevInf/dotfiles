@@ -264,10 +264,10 @@ if filereadable('~/.vim/vimrc.local')
     source '~/.vim/vimrc.local'
 endif
 
-function StartMarkdownMode()
+function! StartMarkdownMode()
     call pencil#init({'wrap': 'hard'})
     colorscheme pencil
-    set background=light
-    set spell
-    set spelllang=en_us,ru_ru
+    setlocal background=light
+    setlocal spell
+    setlocal spelllang=en_us,ru_ru
 endfunction
