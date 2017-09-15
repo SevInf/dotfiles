@@ -80,3 +80,4 @@ ulimit -n 8000
 if [[ -r ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
+

@@ -43,6 +43,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'reedes/vim-colors-pencil'
 Plug 'StanAngeloff/php.vim'
 Plug 'jparise/vim-graphql'
+Plug 'airblade/vim-gitgutter'
 
 if has('nvim')
     " Neovim-specific plugins
