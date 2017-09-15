@@ -30,7 +30,6 @@ Plug 'elzr/vim-json'
 Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/unite.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'airblade/vim-rooter'
 Plug 'wting/rust.vim'
@@ -44,6 +43,8 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'StanAngeloff/php.vim'
 Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 if has('nvim')
     " Neovim-specific plugins
@@ -134,10 +135,9 @@ augroup END
 
 " Key maps
 let g:mapleader=","
-noremap <leader>f <esc>:Unite -start-insert file_rec/async<cr>
-nnoremap <leader>b <esc>:Unite -start-insert buffer<cr>
-noremap <leader>u <esc>:Unite -start-insert source<cr>
-noremap <leader>g <esc>:Unite grep<cr>
+noremap <leader>f <esc>:Files<cr>
+nnoremap <leader>b <esc>:Buffers<cr>
+noremap <leader>g <esc>:Ag<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
