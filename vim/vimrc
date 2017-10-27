@@ -45,6 +45,8 @@ Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'ekalinin/Dockerfile.vim'
 
 if has('nvim')
     " Neovim-specific plugins
