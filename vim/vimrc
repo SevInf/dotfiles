@@ -10,9 +10,12 @@ endif
 
 call plug#begin("~/.vim/bundle")
 
+if (!has('nvim'))
+    Plug 'noahfrederick/vim-neovim-defaults'
+endif
+
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug 'aklt/plantuml-syntax'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
@@ -61,7 +64,6 @@ Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
-syntax on
 filetype plugin on
 filetype plugin indent on
 
@@ -71,11 +73,8 @@ set relativenumber
 set tabstop=4
 set shiftwidth=4
 set shiftround
-set smarttab
 set expandtab
 set smartindent
-set formatoptions-=r
-set backspace=indent,eol,start
 set clipboard=unnamed
 
 set columns=120
@@ -86,23 +85,13 @@ set undodir=~/.vim/undodir
 set undolevels=1000
 set undoreload=10000
 
-" show status line always
-set laststatus=2
-
 " don't show scrollbars, toolbar, menu
 set guioptions+=rlTm
 set guioptions-=rlTm
 
-" better search
-set hlsearch
-set incsearch
-
 "color scheme
 set t_Co=256
 colorscheme base16-solarized-dark
-
-"enable mouse
-set mouse=a
 
 " define a group for autocommands
 augroup vimrc
