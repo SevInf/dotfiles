@@ -270,3 +270,23 @@ function! StartMarkdownMode()
     setlocal spell
     setlocal spelllang=en_us,ru_ru
 endfunction
+
+function! EditAlternate()
+    let name = StripAllExtensions(expand('%:t'))
+    call fzf#vim#files('', {
+    \  'source': 'ag -g ' . shellescape(name),
+    \ })
+endfunction
+
+function! StripAllExtensions(filename)
+    let name = a:filename
+    let noext = fnamemodify(name, ':r')
+    while name != noext
+        let name = noext
+        let noext = fnamemodify(name, ':r')
+    endwhile
+    return name
+endfunction
+
+nnoremap <C-8> :call EditAlternate()<cr>
+
