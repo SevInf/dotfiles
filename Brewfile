@@ -29,6 +29,7 @@ brew "thoughtbot/formulae/rcm"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 
 cask "google-chrome"
+cask "firefox"
 cask "iterm2"
 cask "docker"
 cask "vimr"
