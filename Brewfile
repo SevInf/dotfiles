@@ -41,3 +41,4 @@ mas "Microsoft OneNote", id: 784801555
 mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
+mas "DaisyDisk", id: 411643860
