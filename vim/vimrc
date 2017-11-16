@@ -20,7 +20,7 @@ Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'pangloss/vim-javascript'
-Plug 'chriskempson/base16-vim'
+Plug 'joshdick/onedark.vim'
 Plug 'digitaltoad/vim-jade'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -91,8 +91,8 @@ set guioptions+=rlTm
 set guioptions-=rlTm
 
 "color scheme
-set t_Co=256
-colorscheme base16-solarized-dark
+set termguicolors
+colorscheme onedark
 
 " define a group for autocommands
 augroup vimrc
