@@ -27,6 +27,7 @@ brew "zsh"
 brew "nvm"
 brew "thoughtbot/formulae/rcm"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
+brew "fd"
 
 cask "google-chrome"
 cask "firefox"
