@@ -85,3 +85,5 @@ export FZF_DEFAULT_COMMAND='fd'
 
 export NVM_DIR="$HOME/.nvm"
 [ -f /usr/local/opt/nvm/nvm.sh ] && source "/usr/local/opt/nvm/nvm.sh"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
