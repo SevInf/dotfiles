@@ -34,6 +34,7 @@ cask "iterm2"
 cask "docker"
 cask "vimr"
 cask "caskroom/fonts/font-fira-code"
+cask "protonmail-bridge"
 
 mas "1Password", id: 443987910
 mas "Microsoft OneNote", id: 784801555
