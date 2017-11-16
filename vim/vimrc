@@ -67,8 +67,6 @@ set expandtab
 set smartindent
 set clipboard=unnamed
 
-set columns=120
-
 " persistent undo
 set undofile
 set undodir=~/.vim/undodir
