@@ -33,7 +33,6 @@ Plug 'airblade/vim-rooter'
 Plug 'janko-m/vim-test'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'embear/vim-localvimrc'
-Plug 'reedes/vim-colors-pencil'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -257,8 +256,6 @@ if filereadable('~/.vim/vimrc.local')
 endif
 
 function! StartMarkdownMode()
-    colorscheme pencil
-    setlocal background=light
     setlocal spell
     setlocal spelllang=en_us,ru_ru
 endfunction
