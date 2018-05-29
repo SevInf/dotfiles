@@ -195,6 +195,9 @@ let g:indentLine_noConcealCursor=""
 " no conceal for json
 let g:vim_json_syntax_conceal = 0
 
+" no conceal for markdown
+let g:vim_markdown_conceal = 0
+
 " Vim test mapping
 nmap tn :TestNearest<CR>
 nmap tt :TestLast<CR>
