@@ -10,7 +10,7 @@ antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen apply
 
 export EDITOR='nvim'
-export LANG=en_US.utf8
+export LANG=en_US
 bindkey -v
 export KEYTIMEOUT=1
 
