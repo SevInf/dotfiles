@@ -1,5 +1,4 @@
-tap "caskroom/cask"
-tap "caskroom/fonts"
+tap "homebrew/cask-fonts"
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "neovim/neovim"
@@ -22,7 +21,6 @@ brew "the_silver_searcher"
 brew "tmux"
 brew "vim"
 brew "wget"
-brew "yarn", args: ["without-node"]
 brew "zsh"
 brew "nvm"
 brew "thoughtbot/formulae/rcm"
@@ -34,11 +32,11 @@ cask "firefox"
 cask "iterm2"
 cask "docker"
 cask "vimr"
-cask "caskroom/fonts/font-fira-code"
+cask "visual-studio-code"
+cask "homebrew/cask-fonts/font-fira-code"
 cask "protonmail-bridge"
 
 mas "1Password", id: 443987910
-mas "Microsoft OneNote", id: 784801555
 mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
