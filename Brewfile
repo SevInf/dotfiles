@@ -36,7 +36,7 @@ cask "visual-studio-code"
 cask "homebrew/cask-fonts/font-fira-code"
 cask "protonmail-bridge"
 
-mas "1Password", id: 443987910
+mas "1Password 7", id: 1333542190
 mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
