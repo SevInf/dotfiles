@@ -3,15 +3,12 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "neovim/neovim"
 tap "thoughtbot/formulae"
-tap "universal-ctags/universal-ctags"
 brew "cmake"
 brew "diff-so-fancy"
 brew "git"
 brew "fzf"
 brew "python"
-brew "python3"
 brew "htop"
-brew "hub"
 brew "jq"
 brew "mas"
 brew "neovim"
@@ -24,19 +21,15 @@ brew "wget"
 brew "zsh"
 brew "nvm"
 brew "thoughtbot/formulae/rcm"
-brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 brew "fd"
 
 cask "google-chrome"
 cask "firefox"
 cask "iterm2"
 cask "docker"
-cask "vimr"
 cask "visual-studio-code"
 cask "homebrew/cask-fonts/font-fira-code"
-cask "protonmail-bridge"
 
-mas "1Password 7", id: 1333542190
 mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835

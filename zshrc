@@ -72,8 +72,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # Aliases
-alias mvim='mvim --remote-tab-silent'
-alias serve='python -m SimpleHTTPServer'
+alias serve='python -m http.server'
 
 ulimit -n 8000
 

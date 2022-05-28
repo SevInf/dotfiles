@@ -10,10 +10,6 @@ endif
 
 call plug#begin("~/.vim/bundle")
 
-if (!has('nvim'))
-    Plug 'noahfrederick/vim-neovim-defaults'
-endif
-
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
@@ -26,7 +22,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-rooter'
@@ -36,20 +31,6 @@ Plug 'embear/vim-localvimrc'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-Plug 'Shougo/echodoc.vim'
-Plug 'Shougo/neopairs.vim'
-
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'autozimu/LanguageClient-neovim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
 call plug#end()
 
 filetype plugin on
@@ -89,12 +70,6 @@ augroup vimrc
     autocmd FileType coffee setlocal tabstop=2 shiftwidth=2
     autocmd FileType jade setlocal tabstop=2 shiftwidth=2
     autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
-
-    " jshint
-    autocmd BufNewFile,BufRead .jshintrc set ft=json
-
-    " bower
-    autocmd BufNewFile,BufRead .bowerrc set ft=json
 
     " CocoaPods
     autocmd BufNewFile,BufRead Podfile,*.podspec      set filetype=ruby
@@ -153,12 +128,6 @@ let g:markdown_fenced_languages = [
     \ 'json'
 \ ]
 
-" Ultisnpips keys
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsListSnippets = '<s-tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-tab>'
-
 " airline
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -206,7 +175,7 @@ nmap tt :TestLast<CR>
 let g:NERDTreeQuitOnOpen = 1
 
 " Vim rooter
-let g:rooter_use_lcd = 1
+let g:rooter_cd_command = 'lcd'
 
 " enable jsx in js files
 let g:jsx_ext_required = 0
@@ -221,28 +190,12 @@ let g:gitgutter_sign_removed = '█'
 let g:gitgutter_sign_removed_first_line = '-'
 let g:gitgutter_sign_modified_removed = '█'
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_camel_case = 1
-let g:neopairs#enable = 1
 set cmdheight=2
 let g:echodoc_enable_at_startup = 1
 
 " Allow to pick completion with arrow keys
 inoremap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
-
-" Language Client settings
-let g:LanguageClient_serverCommands = {}
-if executable('javascript-typescript-stdio')
-    let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
-    let g:LanguageClient_serverCommands['javascript.jsx'] = ['javascript-typescript-stdio']
-    let g:LanguageClient_serverCommands.typescript = ['javascript-typescript-stdio']
-else
-  echo "javascript-typescript-langserver is not installed!\n"
-endif
-
-let g:LanguageClient_autoStart = 1
 
 " Neovim-specific settings
 if has('nvim')
