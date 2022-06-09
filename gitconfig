@@ -11,6 +11,7 @@
 	pager = diff-so-fancy | less
 [merge]
 	tool = vimdiff
+	confilctStyle = diff3
 [branch]
 	autosetuprebase = always
 [alias]
