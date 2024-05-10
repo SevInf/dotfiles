@@ -1,3 +1,7 @@
+if [[ -r ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
+
 source ~/.dotfiles/antigen/antigen.zsh
 
 antigen use oh-my-zsh
@@ -76,10 +80,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 alias serve='python -m http.server'
 
 ulimit -n 8000
-
-if [[ -r ~/.zshrc.local ]]; then
-    source ~/.zshrc.local
-fi
 
 export FZF_DEFAULT_COMMAND='fd'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
