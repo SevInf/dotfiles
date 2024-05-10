@@ -3,15 +3,16 @@
 	email = sergey@tatarintsev.me
 [push]
 	default = simple
+	autoSetupRemote = true
 [color]
 	ui = auto
 [core]
 	excludesfile = ~/.gitignore_global
 	preloadindex = true
-	pager = diff-so-fancy | less
+	pager = delta
 [merge]
 	tool = vimdiff
-	confilctStyle = zdiff3
+	conflictstyle = zdiff3
 [branch]
 	autosetuprebase = always
 [alias]
@@ -24,3 +25,11 @@
 	autostash = true
 [include]
     path = .gitconfig.local
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = true
+[diff]
+	algorithm = histogram
+[delta]
+	navigate = true

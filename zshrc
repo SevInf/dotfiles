@@ -2,8 +2,8 @@ source ~/.dotfiles/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle ajeetdsouza/zoxide@main
 antigen bundle git
-antigen bundle z
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 
@@ -16,6 +16,7 @@ export KEYTIMEOUT=1
 
 autoload -U colors
 autoload -Uz vcs_info
+
 
 zstyle ':vcs_info:*' enable git 
 zstyle ':vcs_info:git*' formats " %b"
@@ -83,11 +84,4 @@ fi
 export FZF_DEFAULT_COMMAND='fd'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -f /usr/local/opt/nvm/nvm.sh ] && source "/usr/local/opt/nvm/nvm.sh"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-# pnpm
-export PNPM_HOME="/Users/serhii/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
